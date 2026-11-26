@@ -19,6 +19,7 @@ import kotlin.random.Random
 
 private data class Phone(val id:Int,val model:String,val base:Int,val defects:MutableSet<String>,var inspected:Boolean=false,var ask:Int=0,var paid:Int=0,var listed:Boolean=false)
 private val models=listOf("iPhone 8" to 9000,"iPhone 11" to 20000,"iPhone 12" to 29000,"iPhone 13" to 41000,"iPhone 14 Pro" to 68000,"Galaxy S10" to 11000,"Galaxy S21" to 27000,"Pixel 6" to 22000,"Redmi Note 10" to 9500,"Xiaomi 12" to 24000,"Poco X5" to 13000)
+@OptIn(ExperimentalMaterial3Api::class)
 class MainActivity:ComponentActivity(){ override fun onCreate(savedInstanceState:Bundle?){super.onCreate(savedInstanceState); val prefs=getSharedPreferences("phonebuy",0)
  setContent { MaterialTheme(colorScheme=darkColorScheme(primary=Color(0xFF8175FF),background=Color(0xFF101028),surface=Color(0xFF202044))) {
  var money by remember { mutableIntStateOf(prefs.getInt("money",50000)) }; var day by remember { mutableIntStateOf(prefs.getInt("day",0)) }; var debt by remember { mutableIntStateOf(prefs.getInt("debt",0)) }; var id by remember { mutableIntStateOf(20) }
