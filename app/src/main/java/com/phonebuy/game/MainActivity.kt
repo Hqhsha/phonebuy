@@ -15,6 +15,7 @@ import kotlin.random.Random
 
 private data class Phone(val id: Int, val model: String, val price: Int, var inspected: Boolean = false)
 
+@OptIn(ExperimentalMaterial3Api::class)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
